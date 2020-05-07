@@ -11,7 +11,7 @@ string capitalize(string a){
 
 void getset(string klasa, string tip, string prom){
     cout << tip <<" " << "get" << capitalize(prom) << "()const;\n";
-    cout << "\t\tvoid" <<" " << "set" << capitalize(prom) << "(" << tip << ");\n";
+    cout << "\t\tvoid" <<" " << "set" << capitalize(prom) << "(" << tip << ");\n\n";
     cout << tip <<" "<< klasa << "::" << "get" << capitalize(prom) << "()const{\n\treturn " << prom << ";\n}\n\n";
     cout << "void" <<" "<< klasa << "::" << "set" << capitalize(prom) << "(" << tip << " a){\n\t" << prom << " = a;\n}\n\n";
 }
