@@ -40,9 +40,26 @@ int Putovanje::getMaksimalnaCena()const{
     return maksimalnaCena;
 }
 
-bool Putovanje::dodajKartu(AvionskaKarta &a){
+bool Putovanje::dodajKartu(AvionskaKarta &a)
+    {
+        AvionskaKarta avionskaKarta;
+        for(int i = 0; i <= karte.size(); i++){
+            karte.read(i, avionskaKarta);
+            if(avionskaKarta.getIdentifikatorKarte() == a.getIdentifikatorKarte()){
+                return false;
+            }
+            if(avionskaKarta.getMestoDolaska() != a.getMestoPolaska()){
+                return false;
+            }
+        }
+        if(a.getCenaKarte() > maksimalnaCena)
+        {
+            return false;
+        }
+        karte.add(karte.size() + 1, a);
+        return true;
+    }
 
-}
 
 void Putovanje::izbaciKartu(int b){
     karte.remove(b);
